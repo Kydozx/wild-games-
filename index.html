@@ -40,16 +40,6 @@
             outline: none;
         }
 
-        .ad-space {
-            background: #444;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            border-radius: 10px;
-            font-size: 18px;
-            color: #ccc;
-        }
-
         .game-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -88,6 +78,22 @@
             text-decoration: underline;
         }
 
+        .instructions {
+            background: #444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        footer {
+            background: #111;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .game-list {
@@ -105,56 +111,25 @@
     <input class="search-bar" type="text" placeholder="Search for games..." id="searchBar">
 
     <div class="container">
-        <div class="ad-space">[Ad Space - Ezoic / Adsense Here]</div>
+        <div class="instructions">
+            <h2>How to Use</h2>
+            <p>1. Click on any game to start playing.</p>
+            <p>2. Use the search bar to find specific games.</p>
+            <p>3. Enjoy unblocked games during breaks or free time!</p>
+        </div>
 
         <div class="game-list" id="gameList">
             <!-- Games will be dynamically loaded here -->
         </div>
-
-        <div class="ad-space">[Ad Space - Ezoic / Adsense Here]</div>
     </div>
+
+    <footer>
+        <p>Disclaimer: This website is for educational and recreational purposes only. All games are sourced from free HTML codes.</p>
+    </footer>
 
     <script>
         // Sample Game Data
         const games = [
-            { name: "Game 1", thumbnail: "game1-thumbnail.jpg", link: "game1.html" },
-            { name: "Game 2", thumbnail: "game2-thumbnail.jpg", link: "game2.html" },
-            { name: "Game 3", thumbnail: "game3-thumbnail.jpg", link: "game3.html" },
-            { name: "Game 4", thumbnail: "game4-thumbnail.jpg", link: "game4.html" },
-            { name: "Game 5", thumbnail: "game5-thumbnail.jpg", link: "game5.html" },
-            { name: "Game 6", thumbnail: "game6-thumbnail.jpg", link: "game6.html" },
-            { name: "Game 7", thumbnail: "game7-thumbnail.jpg", link: "game7.html" },
-            { name: "Game 8", thumbnail: "game8-thumbnail.jpg", link: "game8.html" },
-        ];
-
-        // Function to display games
-        function displayGames(filteredGames) {
-            const gameList = document.getElementById('gameList');
-            gameList.innerHTML = ''; // Clear existing games
-
-            filteredGames.forEach(game => {
-                const gameElement = `
-                    <div class="game">
-                        <img src="${game.thumbnail}" alt="${game.name}">
-                        <a href="${game.link}">Play ${game.name}</a>
-                    </div>
-                `;
-                gameList.innerHTML += gameElement;
-            });
-        }
-
-        // Initial display of all games
-        displayGames(games);
-
-        // Search functionality
-        const searchBar = document.getElementById('searchBar');
-        searchBar.addEventListener('input', () => {
-            const searchTerm = searchBar.value.toLowerCase();
-            const filteredGames = games.filter(game =>
-                game.name.toLowerCase().includes(searchTerm)
-            );
-            displayGames(filteredGames);
-        });
-    </script>
-</body>
-</html>
+            { name: "Game 1", thumbnail: "assets/thumbnails/game1-thumbnail.jpg", link: "games/game1.html" },
+            { name: "Game 2", thumbnail: "assets/thumbnails/game2-thumbnail.jpg", link: "games/game2.html" },
+            { name: "Game 3", thumbnail: "assets/thumbnails/game3-thumbnail.jpg", link: "games/game3.html"
